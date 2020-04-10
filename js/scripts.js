@@ -1,0 +1,46 @@
+$(document).ready(function()
+{
+    $('#mycarousel').carousel({interval:2000});
+    $('#carouselButton').click(function()
+    {
+        if($('#carouselButton').children('span').hasClass('fa-pause'))
+        {
+            $('#mycarousel').carousel('pause');
+            $('#carouselButton').children('span').removeClass('fa-pause');
+            $('#carouselButton').children('span').addClass('fa-play');
+
+        }
+        else
+        {
+            $('#mycarousel').carousel('cycle');
+            $('#carouselButton').children('span').removeClass('fa-play');
+            $('#carouselButton').children('span').addClass('fa-pause');
+        }
+        
+    });
+    $('#reservebtn').click(function()
+    {
+        $('#reserveModal').modal('show');
+        $('#reserveclosebtn').click(function()
+        {
+            $('#reserveModal').modal('hide');
+        })
+        $('#reservecancel').click(function()
+        {
+            $('#reserveModal').modal('hide');
+        })
+    });
+    $('#loginbtn').click(function()
+    {
+        $('#loginModal').modal('show');
+        $('#loginclosebtn').click(function()
+        {
+            $('#loginModal').modal('hide');
+        })
+        $('#logincancel').click(function()
+        {
+            $('#loginModal').modal('hide');
+        })
+    })
+   
+});
